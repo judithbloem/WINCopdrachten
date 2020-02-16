@@ -1,0 +1,71 @@
+body {
+  color: black;
+  background-color: white;
+  font-family: Trebuchet MS, sans-serif;
+}
+
+.card {
+  border-radius: 7px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 40%;
+  height: 225px;
+  border: 3px solid lightgray;
+  color: black;
+  float: left;
+  margin: 2%;
+}
+
+.name {
+  width: 80%;
+  position: relative;
+  float: left;
+}
+.personalia {
+  width: 100%;
+}
+
+.photo {
+  width: 20%;
+  padding-top: 20px;
+  position: relative;
+  float: left;
+}
+
+.message {
+  height: 75px;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.buttons {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+h3 {
+  color: grey;
+}
+
+button {
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: -2px;
+  font-size: medium;
+  font-weight: bold;
+}
+#buttonapprove {
+  border-color: green;
+  color: green;
+}
+#buttondecline {
+  border-color: red;
+  color: red;
+}
