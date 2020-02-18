@@ -1,0 +1,20 @@
+{
+  "args": {}, 
+  "data": "let obj = JSON.parse(\n\n{\n  opleiding:\"Winc Academy\",\n  oordeel:\"is de allerbeste\"\n}\n);", 
+  "files": {}, 
+  "form": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate, br", 
+    "Cache-Control": "no-cache", 
+    "Content-Length": "86", 
+    "Content-Type": "text/plain", 
+    "Host": "httpbin.org", 
+    "Postman-Token": "e2ece701-18c6-475c-91b9-b549160d3b94", 
+    "User-Agent": "PostmanRuntime/7.22.0", 
+    "X-Amzn-Trace-Id": "Root=1-5e4a90ab-fbf2b4003d6b19e4bba5582c"
+  }, 
+  "json": null, 
+  "origin": "94.208.224.209", 
+  "url": "https://httpbin.org/post"
+}

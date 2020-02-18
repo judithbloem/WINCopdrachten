@@ -114,19 +114,39 @@ const superheroes =
   //Deel 1: array vanalle superhelden namen
    // console.log("Dit zijn alle namen:", superheroes.name);
 
-const superheroesNames = superheroes.map(hero => hero.name);
-console.log(superheroesNames)
+// const superheroesNames = superheroes.map(hero => hero.name);
+// console.log(superheroesNames)
 
 //Deel 2: array van alle 'lichte' superhelden (<190 pounds)
 
-//const superheroesLightWeight = superheroes.filter(hero => (hero.weight < 190));
-//hoe krijg ik nu alleen de namen terug?  ...   return superheroes.name 
-//console.log(superheroesLightWeight);
+// const superheroesLightWeight = superheroes.filter(hero => (hero.weight < 190));
+// //hoe krijg ik nu alleen de namen terug?  ...   return superheroes.name 
+// console.log(superheroesLightWeight);
 
 //oplossing Ruben
 //const lightSuperHero = superheroes.filter((name) => name.weight < 190)
 //console.log(lightSuperHero);
 
 //Deel 3;
+// const superheroes200 = superheroes.filter(hero => (hero.weight == 200));
+// //hoe krijg ik nu alleen de namen terug?  ...    
+// const superheroes200Names = superheroes200.map(hero => hero.name);
+// console.log(superheroes200Names);
 
-20
+// //oplossing WINC
+// const heavySuperHeroNames = superheroes
+//   .filter(hero => hero.weight == 200)
+//   .map(hero => hero.name);
+// console.log(heavySuperHeroNames);
+
+//Deel 4:
+// const firstAppSuperHero = superheroes.map(hero => hero.first_appearance)
+  
+// console.log("First appearance", firstAppSuperHero);
+
+//Deel 5:
+const DCComics = superheroes.filter(hero => hero.publisher === "DC Comics");
+const marvelComics = superheroes.filter(hero => hero.publisher === "Marvel Comics");
+console.log("DC Comics:", DCComics, "Marvel Comics:", marvelComics);
+
+//Deel 6:
