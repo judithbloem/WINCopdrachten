@@ -5,7 +5,7 @@ const getSucceedingPromise = (message, ms) => {
     let succeedingPromise = new Promise ((resolve, reject) => {
       setTimeout (() => resolve (message), ms)
     });
-    return succeedingPromise();
+    return succeedingPromise;
    };
    
    const getFailingPromise = (errorMessage, ms) => {
@@ -13,24 +13,23 @@ const getSucceedingPromise = (message, ms) => {
     let failingPromise = new Promise ((resolve, reject) => {
       setTimeout (() => reject (errorMessage), ms)
     });
-    return failingPromise();
+    return failingPromise;
    };
    
    const getRandomSucceedingOrFailingPromise = id => {
      // This randomly resolves to true or false
-      let promiseShouldSucceed = () => {Math.random() >= 0.5};
+      let promiseShouldSucceed = Math.random() >= 0.5;
      // This gets some semi-random amound of seconds under the 5seconds:
-      let randomMillisecond = () => {Math.round(Math.random)*5000;
-       };
+      let randomMillisecond = Math.round(Math.random()*5000);
    
      if (promiseShouldSucceed) {
-       return getSucceedingPromise(
-         `Promise ${id} succeeded in ${randomMillisecond} ms.`,
+       return getSucceedingPromise
+         (`Promise ${id} succeeded in ${randomMillisecond} ms.`,
          randomMillisecond
        );
      } else {
-       return getFailingPromise(
-         `Promise ${id} failed in ${randomMillisecond} ms.`,
+       return getFailingPromise
+         (`Promise ${id} failed in ${randomMillisecond} ms.`,
          randomMillisecond
        );
      }
@@ -72,6 +71,17 @@ const getSucceedingPromise = (message, ms) => {
      const promise = getRandomSucceedingOrFailingPromise(id);
      //consumeer hier je Promise
      //return promise ()
+     promise
+      .then(resolved => {
+        console.log(`msg ${resolved}`);
+        allPromises[id].state = 'resolved';
+        showPromises(allPromises)
+      })
+      .catch(error => {
+        console.log(`msg: ${error}`);
+        allPromises[id].state = 'errored';
+        showPromises(allPromises)
+      })
    };
    
    const registerEventHandlers = () => {
