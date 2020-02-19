@@ -16,6 +16,8 @@ arrayMovies.forEach(img=> {
        const list = document.getElementById("movieImages");
        list.appendChild(listItem);
      })};  
+  
+
 
 const movieImagesElement = document.getElementById("movieImages");
   
