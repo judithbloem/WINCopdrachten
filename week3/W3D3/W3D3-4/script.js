@@ -1,55 +1,94 @@
  console.log('JS werkt')
  
- 
- async function finalSolutionMovieGenres() {
-    const finalData = await getData();
-    console.log("this is the final data call of this test ", finalData)
-  displayMovieGenres(finalData);
+ //Deel 1-1
+ async function setMovieGenres() {
+  const movieGenresList = document.getElementById("movieListGenres");
+  const data = await getData();
+  data.genres.forEach(movieGenre => {
+    const li = document.createElement("li");
+    const liContent = document.createTextNode(
+      `genre naam: ${movieGenre.name}, id: ${movieGenre.id}`
+    );
+    li.appendChild(liContent);
+    movieGenresList.appendChild(li);
+  });
   
 };
 
-finalSolutionMovieGenres()
+setMovieGenres()
 
-
-function displayMovieGenres(array) {
-  document.getElementById("movieListGenres").innerHTML += array + "<br>"; 
-}
-
-
-// function displayMovieGenres(filterMovieGenres){
-//     const movieGenres = filterMovieGenres
-//     movieGenres.forEach(txt=> {
-//       const listItem = document.createElement("li");
-//          listItem.appendChild(createTextNode(txt));
-//          const list = document.getElementById("movieListGenres");
-//          list.appendChild(listItem);
-//        })};  
-
-    //    function addMoviesToDom(filterMovies){
-    //     const arrayMovies = filterMovies.map(movie => movie.Poster);
-    //   arrayMovies.forEach(img=> {
-    //       const listItem = document.createElement("li");
-    //          listItem.appendChild(createImageNode(img));
-    //          const list = document.getElementById("movieImages");
-    //          list.appendChild(listItem);
-    //        })};  
-
-
-//const retrievedFilmData = JSON.parse(finalSolutionMovieGenres)
-
-// const displayMovieGenres = function(retrievedFilmData){
-//     const movieGenres = finalData.genres
-//     movieGenres.forEacht(movieGenre => {
-//          const listItem = document.createElement('li');
-//          const listItemContent = `genre naam: ${retrievedFilmData.name}, id: ${retrievedFilmData.id}`
-//          listItem.appendChild(document.createTextNode(listItemContent));
-//          document.getElementById("movieListGenres").append(listItem)
-//     })
-//     displayMovieGenres()
-// }
-
-// const genresToHTML = document.getElementById('movieListGenres');
-// genresToHTML.innerHTML = finalData();
-
-
+//Deel 1-2
+async function favoriteMovie() {
+  const movieGenresList = document.getElementById("myFavoriteMovie");
+  const data = await getMovieID();
+  data.movie_results.forEach(movieID => {
+    const li = document.createElement("li");
+    const liContent = document.createTextNode(
+      `${movieID.title}`
+    );
+    li.appendChild(liContent);
+    movieGenresList.appendChild(li);
+  });
   
+};
+
+favoriteMovie()
+
+//Deel 1-3
+
+async function topRatedMovies() {
+  const top10List = document.getElementById("topRatedMovies");
+  const data = await getTopRated();
+  const top10Rated = data.results.splice(1,10)
+  top10Rated.forEach(movie => {
+
+    //console.log('werkt ie nu eindelijk', top10Rated)
+
+    const li = document.createElement("li");
+    const liContent = document.createTextNode(
+      `${movie.title}`
+    );
+    li.appendChild(liContent);
+    top10List.appendChild(li);
+  });
+  
+};
+topRatedMovies()
+
+//Deel 1-4
+// async function topRatedActionMovies() {
+//   const top10List = document.getElementById("topRatedActionMovies");
+//   const data = await getTopRatedAction();
+//   const top10Rated = data.results.splice(1,10)
+//   top10Rated.forEach(movie => {
+
+//     console.log('werkt ie nu eindelijk', top10Rated)
+    
+//     const li = document.createElement("li");
+//     const liContent = document.createTextNode(
+//       `${movie.title}`
+//     );
+//     li.appendChild(liContent);
+//     top10List.appendChild(li);
+//   });
+  
+// };
+// topRatedActionMovies()
+
+//Deel 1-5
+
+async function moviesFrom1975() {
+  const movieGenresList = document.getElementById("1975Movies");
+  const data = await Movie1975();
+  data.results.forEach(movie => {
+    const li = document.createElement("li");
+    const liContent = document.createTextNode(
+      `${movie.title}`
+    );
+    li.appendChild(liContent);
+    movieGenresList.appendChild(li);
+  });
+  
+};
+
+moviesFrom1975()
