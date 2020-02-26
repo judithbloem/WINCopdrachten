@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:700);
+
+body {
+  background: grey;
+  text-align: center;
+}
+
+a.linkOne:hover {
+  color: lightblue;
+  font-weight: bold;
+}
+
+a.linkTwo:active {
+  color: red;
+  font-style: italic;
+}
+a.linkTree:visited {
+  color: yellow;
+}
+/* .visited {
+  text-decoration: line-through;
+} 
+is dit de goede manier? dan mbv JS een class laten toevoegen aan de links die bezocht zijn*/
+
+input:focus {
+  color: green;
+  font-size: 20px;
+  border: 5px solid black;
+}
+
+.menu {
+  display: flex;
+  background-color: darkblue;
+  color: white;
+  list-style: none;
+  justify-content: space-between;
+}
+.currentPage {
+  background-color: #6699cc;
+}
+li:hover {
+  background-color: lightblue;
+}
+.menu:focus {
+  border-width: 10px;
+  border-style: solid;
+  border-color: #00ffff;
+}
+
+/* Deel 1:
+
+x Maak een html pagina en een css file.
+x Maak een link, on `:hover` moet deze **lichtblauw en dikgedrukt** worden.
+x Maak een tweede link. Wanneer de gebruiker de link activeert (klikt) moet de link **rood en schuingedrukt** worden. `:active`
+(Je zal merken dat de "active" staat van een link element suuuuperkort duurt, maar wat als je je muis ingedrukt houdt?)
+? Maak een derde link die **geel en doorgestreept** wordt wanneer deze bezocht is, dus met behulp van `:visited`.
+x Maak een text input veld waarvan de tekst **groen** **en 20px groot** wordt wanneer dat veld de focus heeft, dus met behulp van `:focus`.
+
+---
+
+
+
+Deel 2:
+
+x Maak een **horizontaal** menu met behulp van `<nav>`, `<ul>`,`<li>` en `<a>`
+x Zorg dat de menu items wat ruimte tussen elkaar hebben.
+x Het eerste item moet geen ruimte aan de linkerkant hebben.
+x Het laatste item van je menu is een zoekbalk in de vorm van een <input>
+x Geef het hele menu één achtergrondkleur: donkerblauw.
+x Geef één van de menu-items een `class="currentPage"` zorg ervoor met CSS dat dit menu-item er anders uitziet: achtergrondkleur: grijsblauw. (Dit is dan bijvoorbeeld de huidige pagina waar we naar kijken)
+x Als je over een menu item hovert moet dat menu item er anders uitzien dan alle andere menu items. Neem achtergrondkleur: lichtblauw.
+- Als de gebruiker zich focust op de zoekbalk moet deze een gekleurde border krijgen. Gebruik kleur: aquablauw. */
