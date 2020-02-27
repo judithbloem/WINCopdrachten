@@ -1,0 +1,6 @@
+const wordLength = function(someWords) {
+  //Schrijf je functie...
+  return someWords.map(word => word.length);
+};
+
+module.exports = wordLength;
