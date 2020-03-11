@@ -1,4 +1,4 @@
-const patients = [
+export const patients = [
   {
     Id: 301,
     name: "Elise",

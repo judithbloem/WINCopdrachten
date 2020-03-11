@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./style.css";
 import CalenderOverview from "./components/CalenderOverview";
 
 class App extends Component {
